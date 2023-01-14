@@ -1,0 +1,79 @@
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar color="primary">Lista de alunos</mat-toolbar>
+
+    <table mat-table [dataSource]="alunos" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Id Column -->
+      <ng-container matColumnDef="numeroIncricao">
+        <th mat-header-cell *matHeaderCellDef>Matricula</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.numeroIncricao }}</td>
+      </ng-container>
+
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>nome</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.nome }}</td>
+      </ng-container>
+
+      <!-- contato Column -->
+      <ng-container matColumnDef="contato">
+        <th mat-header-cell *matHeaderCellDef>contato</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.contato }}</td>
+      </ng-container>
+
+      <!-- rg Column -->
+      <ng-container matColumnDef="rg">
+        <th mat-header-cell *matHeaderCellDef>rg</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.rg }}</td>
+      </ng-container>
+
+      <!-- data_nasicmento Column -->
+      <ng-container matColumnDef="data_nasicmento">
+        <th mat-header-cell *matHeaderCellDef>data_nasicmento</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.data_nasicmento }}</td>
+      </ng-container>
+
+      <!-- endereco Column -->
+      <ng-container matColumnDef="endereco">
+        <th mat-header-cell *matHeaderCellDef>endereco</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.endereco }}</td>
+      </ng-container>
+
+      <!-- senha Column -->
+      <ng-container matColumnDef="senha">
+        <th mat-header-cell *matHeaderCellDef>senha</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.senha }}</td>
+      </ng-container>
+
+      <!-- bolsista Column -->
+      <ng-container matColumnDef="bolsista">
+        <th mat-header-cell *matHeaderCellDef>bolsista</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.bolsista }}</td>
+      </ng-container>
+
+      <!-- genero Column -->
+      <ng-container matColumnDef="genero">
+        <th mat-header-cell *matHeaderCellDef>Gênero</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.genero }}</td>
+      </ng-container>
+
+      <!-- estadoCivil Column -->
+      <ng-container matColumnDef="estadoCivil">
+        <th mat-header-cell *matHeaderCellDef>Estado Civíl</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.estadoCivil }}</td>
+      </ng-container>
+
+      <!-- raca Column -->
+      <ng-container matColumnDef="raca">
+        <th mat-header-cell *matHeaderCellDef>Raça</th>
+        <td mat-cell *matCellDef="let aluno">{{ aluno.raca }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
