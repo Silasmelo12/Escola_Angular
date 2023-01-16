@@ -1,7 +1,9 @@
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { AlunosService } from './../services/alunos.service';
 import { Aluno } from './../model/aluno';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-alunos',
@@ -19,10 +21,25 @@ export class AlunosComponent implements OnInit  {
    //alunosService: AlunosService;
 
 
-  constructor(private alunosService: AlunosService){
+  constructor(
+    private alunosService: AlunosService,
+    public dialog:MatDialog
+  ){
     //this.alunosService = new AlunosService();
-    this.alunos$ = this.alunosService.listAlunos();
+    this.alunos$ = this.alunosService.listAlunos()
+    .pipe(
+      catchError(error => {
+        this.onError('Erro ao carregar alunos.')
+          return of([])
+      })
+    );
 //    this.alunos = [];
+  }
+
+  onError(errorMsg: string){
+    this.dialog.open(ErrorDialogComponent,{
+      data: errorMsg
+    })
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');

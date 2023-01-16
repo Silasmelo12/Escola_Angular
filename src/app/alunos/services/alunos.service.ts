@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { delay, tap } from 'rxjs/operators';
-import { first } from 'rxjs/operators';
+import { delay, first, tap } from 'rxjs/operators';
 
 import { Aluno } from './../model/aluno';
 
@@ -12,7 +11,7 @@ export class AlunosService {
 
   constructor(private httpClient: HttpClient) { }
 
-private readonly API = '/assets/aluno.json';
+private readonly API = '/assets/aaluno.json';
 
   list(): Aluno[]{
     return [

@@ -1,10 +1,11 @@
-import { AppMaterialModule } from './../shared/app-material/app-material.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-
+import { AppMaterialModule } from './../shared/app-material/app-material.module';
+import { SharedModule } from './../shared/shared.module';
 import { AlunosRoutingModule } from './alunos-routing.module';
 import { AlunosComponent } from './alunos/alunos.component';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AlunosComponent } from './alunos/alunos.component';
   imports: [
     CommonModule,
     AlunosRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    SharedModule
   ]
 })
 export class AlunosModule { }
