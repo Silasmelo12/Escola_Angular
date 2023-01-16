@@ -11,7 +11,8 @@ export class AlunosService {
 
   constructor(private httpClient: HttpClient) { }
 
-private readonly API = '/assets/aaluno.json';
+//private readonly API = '/assets/aluno.json';
+private readonly API = 'alunos';
 
   list(): Aluno[]{
     return [
@@ -33,12 +34,8 @@ private readonly API = '/assets/aaluno.json';
     return this.httpClient.get<Aluno[]>(this.API)
     .pipe(
       first(),
-      delay(15000),
+      //delay(15000),
       tap(alunos => console.log(alunos))
     );
-    return this.httpClient.get<Aluno[]>('http://localhost:8080/alunos/1')
-    .pipe(
-      tap(alunos => console.log(alunos))
-    );;
   }
 }
