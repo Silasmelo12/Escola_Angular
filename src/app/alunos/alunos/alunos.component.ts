@@ -1,30 +1,30 @@
+import { AlunosService } from './../services/alunos.service';
 import { Aluno } from './../model/aluno';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-alunos',
   templateUrl: './alunos.component.html',
   styleUrls: ['./alunos.component.scss']
 })
-export class AlunosComponent  {
+export class AlunosComponent implements OnInit  {
 
-  alunos: Aluno[] = [
-    {numeroIncricao: 1,
-    nome:'Silas' ,
-    contato:'81992337067' ,
-    rg:'123' ,
-    data_nasicmento:'18/09/1995' ,
-    endereco:'Carpina' ,
-    senha:'123' ,
-    bolsista:'Sim' ,
-    genero:'Masculino' ,
-    estadoCivil:'Solteiro',
-    raca:'Pardo'}];
+  alunos: Observable<Aluno[]>;
+  //alunos: Aluno[] = [];
   displayedColumns = ['numeroIncricao', 'nome',  'contato', 'rg', 'data_nasicmento',
-   'endereco', 'senha', 'bolsista', 'genero', 'estadoCivil', 'raca']
+   'endereco', 'bolsista', 'genero', 'estadoCivil', 'raca']
 
-  constructor(){
+   //alunosService: AlunosService;
+
+
+  constructor(private alunosService: AlunosService){
+    //this.alunosService = new AlunosService();
+    this.alunos = this.alunosService.listAlunos();
 //    this.alunos = [];
+  }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
 }

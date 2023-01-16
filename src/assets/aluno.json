@@ -1,0 +1,12 @@
+[
+  {"numeroIncricao": 8345475,
+        "nome":"Fernando" ,
+        "contato":"123" ,
+        "data_nasicmento":"20/02/2010",
+        "endereco":"João Pessoa" ,
+        "bolsista":"Sim" ,
+        "genero":"Masculino" ,
+        "estadoCivil":"Solteiro",
+        "raca":"Pardo",
+        "rg":"123" }
+]
