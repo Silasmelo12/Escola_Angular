@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
+import { delay, tap } from 'rxjs/operators';
 import { first } from 'rxjs/operators';
 
 import { Aluno } from './../model/aluno';
@@ -34,6 +34,7 @@ private readonly API = '/assets/aluno.json';
     return this.httpClient.get<Aluno[]>(this.API)
     .pipe(
       first(),
+      delay(15000),
       tap(alunos => console.log(alunos))
     );
     return this.httpClient.get<Aluno[]>('http://localhost:8080/alunos/1')

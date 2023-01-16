@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class AlunosComponent implements OnInit  {
 
-  alunos: Observable<Aluno[]>;
+  alunos$: Observable<Aluno[]>;
+
   //alunos: Aluno[] = [];
   displayedColumns = ['numeroIncricao', 'nome',  'contato', 'rg', 'data_nasicmento',
    'endereco', 'bolsista', 'genero', 'estadoCivil', 'raca']
@@ -20,7 +21,7 @@ export class AlunosComponent implements OnInit  {
 
   constructor(private alunosService: AlunosService){
     //this.alunosService = new AlunosService();
-    this.alunos = this.alunosService.listAlunos();
+    this.alunos$ = this.alunosService.listAlunos();
 //    this.alunos = [];
   }
   ngOnInit(): void {
