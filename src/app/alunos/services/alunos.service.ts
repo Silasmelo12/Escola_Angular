@@ -12,7 +12,7 @@ export class AlunosService {
   constructor(private httpClient: HttpClient) { }
 
 //private readonly API = '/assets/aluno.json';
-private readonly API = 'alunos';
+private readonly API = 'api/alunos';
 
   list(): Aluno[]{
     return [
