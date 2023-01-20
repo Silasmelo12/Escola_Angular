@@ -1,13 +1,15 @@
 export interface Aluno {
+
+
   numeroIncricao: number;
   nome:String ;
   contato:String ;
   data_nasicmento:String ;
   endereco:String ;
   //senha:String ;
-  bolsista:String ;
+  bolsista: boolean ;
   genero:String ;
   estadoCivil:String ;
   raca:String ;
-  rg:String ;
+  RG:String ;
 }

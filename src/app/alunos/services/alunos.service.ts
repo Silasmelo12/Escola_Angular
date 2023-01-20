@@ -22,11 +22,11 @@ private readonly API = 'api/alunos';
         data_nasicmento:'20/02/2010' ,
         endereco:'Carpina' ,
         //senha:'***' ,
-        bolsista:'Sim' ,
+        bolsista:true ,
         genero:'Masculino' ,
         estadoCivil:'Solteiro',
         raca:'Pardo',
-        rg:'123' }
+        RG:'123' }
     ]
   }
 
@@ -37,5 +37,10 @@ private readonly API = 'api/alunos';
       //delay(15000),
       tap(alunos => console.log(alunos))
     );
+  }
+
+  save(aluno: Aluno){
+    console.log(aluno);
+    return this.httpClient.post<Aluno>(this.API,aluno).pipe(first());
   }
 }

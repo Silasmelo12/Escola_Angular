@@ -1,55 +1,71 @@
-<mat-card  >
-  <mat-toolbar  class="mat-card" color="primary">Cadastrar aluno</mat-toolbar>
+<mat-card>
+  <mat-toolbar class="mat-card" color="primary">Cadastrar aluno</mat-toolbar>
   <mat-card-content align="end">
     <form [formGroup]="form">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Nome" formControlNome="nome" />
+        <input matInput placeholder="Nome" formControlName="nome" />
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Contato" formControlNome="contato" />
+        <input matInput placeholder="Contato" formControlName="contato" />
       </mat-form-field>
 
       <mat-form-field class="full-width">
         <input
           matInput
           placeholder="Data de nascimento"
-          formControlNome="data_nasicmento"
+          formControlName="data_nasicmento"
         />
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Endereço" formControlNome="endereco" />
+        <input matInput placeholder="Endereço" formControlName="endereco" />
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Bolsista" formControlNome="bolsista" />
+        <mat-label>Bolsista</mat-label>
+        <mat-select formControlName="bolsista">
+          <mat-option *ngFor="let option of options" [value]="option.value">
+            {{option.viewValue}}
+        </mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Genero" formControlNome="genero" />
+        <mat-label>Gênero</mat-label>
+        <mat-select formControlName="genero">
+          <mat-option value="M">Masculino</mat-option>
+          <mat-option value="F">Feminino</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input
-          matInput
-          placeholder="Estado Civil"
-          formControlNome="estadoCivil"
-        />
+        <mat-label>Estado Civil</mat-label>
+        <mat-select formControlName="estadoCivil">
+          <mat-option value="solteiro">Solteiro</mat-option>
+          <mat-option value="casado">Casado</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="Raça" formControlNome="raca" />
+        <mat-label>Raça</mat-label>
+        <mat-select formControlName="raca">
+          <mat-option value="preta">Preto</mat-option>
+          <mat-option value="branca">Branco</mat-option>
+          <mat-option value="parda">Parda</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <input matInput placeholder="RG" formControlNome="rg" />
+        <input matInput placeholder="RG" formControlName="RG" />
       </mat-form-field>
+
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" (click)="onSubmit()">
+          Cadastrar
+        </button>
+        <button mat-raised-button (click)="onCancel()">Cancelar</button>
+      </mat-card-actions>
     </form>
   </mat-card-content>
-
-  <mat-card-actions align="end">
-    <button mat-raised-button color="primary">Cadastrar</button>
-    <button mat-raised-button>Cancelar</button>
-  </mat-card-actions>
 </mat-card>
