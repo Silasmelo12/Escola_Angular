@@ -1,0 +1,55 @@
+<mat-card  >
+  <mat-toolbar  class="mat-card" color="primary">Cadastrar aluno</mat-toolbar>
+  <mat-card-content align="end">
+    <form [formGroup]="form">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Nome" formControlNome="nome" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Contato" formControlNome="contato" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Data de nascimento"
+          formControlNome="data_nasicmento"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Endereço" formControlNome="endereco" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Bolsista" formControlNome="bolsista" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Genero" formControlNome="genero" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          placeholder="Estado Civil"
+          formControlNome="estadoCivil"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Raça" formControlNome="raca" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="RG" formControlNome="rg" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary">Cadastrar</button>
+    <button mat-raised-button>Cancelar</button>
+  </mat-card-actions>
+</mat-card>

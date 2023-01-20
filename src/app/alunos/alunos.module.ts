@@ -1,21 +1,28 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from './../shared/app-material/app-material.module';
 import { SharedModule } from './../shared/shared.module';
+import { AlunoFormComponent } from './aluno-form/aluno-form.component';
 import { AlunosRoutingModule } from './alunos-routing.module';
 import { AlunosComponent } from './alunos/alunos.component';
+
+//import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
   declarations: [
-    AlunosComponent
+    AlunosComponent,
+    AlunoFormComponent
   ],
   imports: [
     CommonModule,
     AlunosRoutingModule,
     AppMaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
+    //MatFormFieldModule
   ]
 })
 export class AlunosModule { }
